@@ -736,5 +736,5 @@ client.on("guildMemberAdd", member => {
     member.guild.channels.cache.get(id).send(messageLogEmbed);
 });
 
-client.login('NzcwMDExMTg1NjIxNzYyMDY4.X5XWzA.WJeQ6zH5-GFvN6tdv_a9JUsnilI');
+client.login('TOKEN');
 
