@@ -717,24 +717,23 @@ client.on('message', async message => {
     }
 });
 
-// doesnt work
-client.on("guildMemberAdd", member => {
-    if (messageLogOn === false) return;
-    const messageLogChannelID = messageLogChannel.split('');
-    const idArray = messageLogChannelID.slice(2, (messageLogChannelID.length - 1));
-    const id = idArray.join('').toString();
-    console.log(idArray, id);
-    const messageLogEmbed = new Discord.MessageEmbed()
-        .setAuthor(`<NEW MEMBER> ${member.nickname}`, 'https://cdn.discordapp.com/attachments/772586166922903553/772586180960714772/unnamed.png')
-        .addFields([
-            { name: 'Member', value: `<@${member.id}>`, inline: true },
-            { name: 'Joined Server', value: `${member.joinedAt}`, inline: true },
-            { name: 'Account Created', value: `${member.user.createdAt}`, inline: true },
-            { name: 'ID', value: `${member.id}`, inline: true },
-        ])
-        .setColor('RED')
-    member.guild.channels.cache.get(id).send(messageLogEmbed);
-});
+// client.on("guildMemberAdd", member => {
+//     if (messageLogOn === false) return;
+//     const messageLogChannelID = messageLogChannel.split('');
+//     const idArray = messageLogChannelID.slice(2, (messageLogChannelID.length - 1));
+//     const id = idArray.join('').toString();
+//     console.log(idArray, id);
+//     const messageLogEmbed = new Discord.MessageEmbed()
+//         .setAuthor(`<NEW MEMBER> ${member.nickname}`, 'https://cdn.discordapp.com/attachments/772586166922903553/772586180960714772/unnamed.png')
+//         .addFields([
+//             { name: 'Member', value: `<@${member.id}>`, inline: true },
+//             { name: 'Joined Server', value: `${member.joinedAt}`, inline: true },
+//             { name: 'Account Created', value: `${member.user.createdAt}`, inline: true },
+//             { name: 'ID', value: `${member.id}`, inline: true },
+//         ])
+//         .setColor('RED')
+//     member.guild.channels.cache.get(id).send(messageLogEmbed);
+// });
 
 client.login('TOKEN');
 
